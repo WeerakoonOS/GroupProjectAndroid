@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tharindu.myapplication.Main5Activity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="136dp"
+        android:layout_height="31dp"
+        android:background="@android:color/holo_blue_bright"
+        android:text="iShopping"
+
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteY="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btnRateShop"
+        android:layout_width="216dp"
+        android:layout_height="51dp"
+        android:text="Rate Shop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="206dp" />
+
+    <Button
+        android:id="@+id/btnShopDetails"
+        android:layout_width="215dp"
+        android:layout_height="49dp"
+        android:text="Shop Details"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="291dp" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="86dp"
+        android:layout_height="41dp"
+        android:text="BACK"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="434dp" />
+
+    <Button
+        android:id="@+id/btnNewItems"
+        android:layout_width="217dp"
+        android:layout_height="46dp"
+        android:text="Availabilities"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="114dp" />
+</android.support.constraint.ConstraintLayout>
+
+
+<TextView
+android:id="@+id/tvIShopM"
+android:layout_width="136dp"
+android:layout_height="31dp"
+android:background="@android:color/holo_blue_bright"
+android:text="iShopping"
+
+android:textAlignment="center"
+android:textColor="@color/colorPrimary"
+android:textSize="20dp"
+tools:layout_editor_absoluteX="133dp"
+tools:layout_editor_absoluteY="16dp" />
