@@ -16,9 +16,10 @@
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="20dp"
-        tools:layout_editor_absoluteY="32dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="27dp" />
 
     <Button
         android:id="@+id/btnRateShop"
@@ -27,34 +28,43 @@
         android:text="Rate Shop"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="206dp" />
+        android:layout_marginTop="53dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnNewItems" />
 
     <Button
         android:id="@+id/btnShopDetails"
         android:layout_width="215dp"
         android:layout_height="49dp"
         android:text="Shop Details"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="291dp" />
+        app:layout_constraintHorizontal_bias="0.502"
+        android:layout_marginTop="51dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnRateShop" />
 
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="86dp"
-        android:layout_height="41dp"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
         android:text="BACK"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="434dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="72dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnShopDetails"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnNewItems"
         android:layout_width="217dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         android:text="Availabilities"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="114dp" />
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.502" />
 </android.support.constraint.ConstraintLayout>
 
 
