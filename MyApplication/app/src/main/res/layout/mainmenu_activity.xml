@@ -4,28 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tharindu.myapplication.Main3Activity">
+    tools:context="com.example.tharindu.myapplication.MainMenuActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnSettings"
         android:layout_width="191dp"
         android:layout_height="44dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="273dp"
         android:text="Settings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        android:layout_marginTop="28dp"
-        app:layout_constraintTop_toBottomOf="@+id/btnShops" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43" />
 
     <Button
-        android:id="@+id/btnList"
+        android:id="@+id/btnCart"
         android:layout_width="188dp"
         android:layout_height="38dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="143dp"
         android:text="Cart"
-        android:layout_marginTop="97dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvIShopM"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.009" />
 
     <Button
         android:id="@+id/btnShops"
@@ -34,11 +40,14 @@
         android:text="Shops"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@+id/btnList" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="213dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tvIShopM"
+        android:id="@+id/tvLogo"
         android:layout_width="136dp"
         android:layout_height="31dp"
         android:layout_marginTop="16dp"
@@ -50,7 +59,10 @@
         android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.021" />
 
     <Button
         android:id="@+id/btnLogOut"
@@ -59,12 +71,12 @@
         android:text="Log Out"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="19dp"
-        app:layout_constraintTop_toBottomOf="@+id/btnProfile"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.125" />
+        android:layout_marginBottom="49dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="0.973" />
 
     <Button
         android:id="@+id/btnProfile"
@@ -73,8 +85,11 @@
         android:text="Profile"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="26dp"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.502" />
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
