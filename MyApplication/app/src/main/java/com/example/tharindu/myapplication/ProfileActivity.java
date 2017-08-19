@@ -6,39 +6,38 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class CartActivity extends AppCompatActivity {
-    private Button btnCreateNewList, btnViewLists, btnEditList, btnBack;
+public class ProfileActivity extends AppCompatActivity {
+    private Button btnReveiews, btnEdit, btnChangePassword, btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cart_activity);
+        setContentView(R.layout.profile_activity);
 
         init();
-        clickCreateNewList();
-        clickViewLists();
-        clickEditList();
+        clickReviews();
+        clickEdit();
+        clickChangePassword();
         clickBack();
-
     }
-
 
     private void init(){
-        btnCreateNewList = (Button)findViewById(R.id.btnCreateNewList);
-        btnViewLists = (Button)findViewById(R.id.btnViewLists);
-        btnEditList = (Button)findViewById(R.id.btnEditList);
+        btnReveiews = (Button)findViewById(R.id.btnReviews);
+        btnEdit = (Button)findViewById(R.id.btnEdit);
+        btnChangePassword = (Button)findViewById(R.id.btnChangePassword);
         btnBack = (Button)findViewById(R.id.btnBack);
-    }
-
-    private void clickCreateNewList(){
 
     }
 
-    private void clickViewLists(){
+    private void clickReviews(){
 
     }
 
-    private void clickEditList(){
+    private void clickEdit(){
+
+    }
+
+    private void clickChangePassword(){
 
     }
 
@@ -46,7 +45,7 @@ public class CartActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(CartActivity.this, MainMenuActivity.class);
+                Intent i = new Intent(ProfileActivity.this, MainMenuActivity.class);
                 startActivity(i);
             }
         });

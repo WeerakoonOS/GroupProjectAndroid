@@ -39,7 +39,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.036" />
+        app:layout_constraintVertical_bias="0.047"
+        app:layout_constraintHorizontal_bias="0.528" />
 
     <Button
         android:id="@+id/btnEditList"
@@ -66,7 +67,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.888" />
+        app:layout_constraintVertical_bias="0.903" />
 
     <Button
         android:id="@+id/btnCreateNewList"

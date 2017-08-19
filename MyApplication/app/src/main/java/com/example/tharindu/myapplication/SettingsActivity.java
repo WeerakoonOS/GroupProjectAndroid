@@ -6,47 +6,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class CartActivity extends AppCompatActivity {
-    private Button btnCreateNewList, btnViewLists, btnEditList, btnBack;
+public class SettingsActivity extends AppCompatActivity {
+    private Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cart_activity);
+        setContentView(R.layout.settings_activity);
 
         init();
-        clickCreateNewList();
-        clickViewLists();
-        clickEditList();
         clickBack();
-
     }
-
 
     private void init(){
-        btnCreateNewList = (Button)findViewById(R.id.btnCreateNewList);
-        btnViewLists = (Button)findViewById(R.id.btnViewLists);
-        btnEditList = (Button)findViewById(R.id.btnEditList);
         btnBack = (Button)findViewById(R.id.btnBack);
-    }
-
-    private void clickCreateNewList(){
-
-    }
-
-    private void clickViewLists(){
-
-    }
-
-    private void clickEditList(){
-
     }
 
     private void clickBack(){
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(CartActivity.this, MainMenuActivity.class);
+                Intent i = new Intent(SettingsActivity.this, MainMenuActivity.class);
                 startActivity(i);
             }
         });
