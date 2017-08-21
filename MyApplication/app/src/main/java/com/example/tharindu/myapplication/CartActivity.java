@@ -31,7 +31,13 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void clickCreateNewList(){
-
+        btnCreateNewList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CartActivity.this, CreateNewListActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void clickViewLists(){
