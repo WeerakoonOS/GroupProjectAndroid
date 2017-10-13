@@ -1,5 +1,7 @@
 package com.example.tharindu.myapplication;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,11 +16,14 @@ import java.util.ArrayList;
 
 public class CreateNewListActivity extends AppCompatActivity {
     EditText etItemName;
-    Button btnAdd, btnDelete, btnUpdate, btnClear;
+    Button btnAdd, btnDelete, btnUpdate, btnClear, btnSave;
     ListView lvList;
 
+    private static final String TAG = "CreateNewListActivity"; //For database operations
+    DatabaseHelper mDatabaseHelper; //For database operations
+
     ArrayList<String> items = new ArrayList<String>();
-    ArrayAdapter<String> adapter;
+    public ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +42,12 @@ public class CreateNewListActivity extends AppCompatActivity {
 
             }
         });
-
+        mDatabaseHelper = new DatabaseHelper(this);
         clickAdd();
         clickUpdate();
         clickDelete();
         clickClear();
+        clickSave();
 
     }
 
@@ -51,7 +57,9 @@ public class CreateNewListActivity extends AppCompatActivity {
         btnDelete = (Button)findViewById(R.id.btnDelete);
         btnUpdate = (Button)findViewById(R.id.btnUpdate);
         btnClear = (Button)findViewById(R.id.btnClear);
+        btnSave = (Button)findViewById(R.id.btnSave);
         lvList = (ListView)findViewById(R.id.lvList);
+        //mDatabaseHelper = new DatabaseHelper(this);
 
     }
 
@@ -61,9 +69,9 @@ public class CreateNewListActivity extends AppCompatActivity {
             adapter.add(itemName);
             adapter.notifyDataSetChanged();
             etItemName.setText("");
-            Toast.makeText(getApplicationContext(), "Added " + itemName, Toast.LENGTH_SHORT).show();
+            toastMessage("Added " + itemName);
         }else{
-            Toast.makeText(getApplicationContext(), "Nothing to add", Toast.LENGTH_SHORT).show();
+            toastMessage("Nothing to add");
 
         }
     }
@@ -76,9 +84,9 @@ public class CreateNewListActivity extends AppCompatActivity {
             adapter.remove(items.get(pos));
             adapter.insert(itemName, pos);
             adapter.notifyDataSetChanged();
-            Toast.makeText(getApplicationContext(), "Updated " + itemName, Toast.LENGTH_SHORT).show();
+            toastMessage("Updated " + itemName);
         }else{
-            Toast.makeText(getApplicationContext(), "Nothing to update", Toast.LENGTH_SHORT).show();
+            toastMessage("Nothing to update");
 
         }
     }
@@ -90,9 +98,9 @@ public class CreateNewListActivity extends AppCompatActivity {
             adapter.remove(items.get(pos));
             adapter.notifyDataSetChanged();
             etItemName.setText("");
-            Toast.makeText(getApplicationContext(), "Deleted ", Toast.LENGTH_SHORT).show();
+            toastMessage("Deleted");
         }else{
-            Toast.makeText(getApplicationContext(), "Nothing to delete", Toast.LENGTH_SHORT).show();
+            toastMessage("Nothing to delete");
         }
     }
 
@@ -100,6 +108,27 @@ public class CreateNewListActivity extends AppCompatActivity {
         adapter.clear();
         etItemName.setText("");
     }
+
+    private void saveToDatabase(ArrayAdapter<String> list){
+        int insertData = 0;
+        for(int i=0; i<list.getCount(); i++){
+            String value = list.getItem(i);
+            insertData += mDatabaseHelper.addData(value);
+        }
+
+        if(insertData == list.getCount()){
+            if(insertData != 0){
+
+                toastMessage("List Saved Sucessfully!");
+            }else{
+                toastMessage("No List To Save!");
+            }
+
+        }
+        adapter.clear();
+    }
+
+
 
     private void clickAdd(){
         btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -135,5 +164,16 @@ public class CreateNewListActivity extends AppCompatActivity {
                 clear();
             }
         });
+    }
+
+    private void clickSave(){
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { saveToDatabase(adapter);}
+        });
+    }
+
+    private void toastMessage(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

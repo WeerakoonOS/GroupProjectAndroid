@@ -8,6 +8,6 @@ public class ShopDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shop_details);
+        setContentView(R.layout.shopdetails_activity);
     }
 }
