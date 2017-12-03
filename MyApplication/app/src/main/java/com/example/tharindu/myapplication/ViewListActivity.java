@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class ViewListActivity extends AppCompatActivity {
     private static final String TAG = "ViewListActivity";
     private Button btnDeleteList;
+    private Button btnFetch;
     DatabaseHelper mDatabaseHeper;
     ListView lvShowList;
 
@@ -30,6 +31,7 @@ public class ViewListActivity extends AppCompatActivity {
         init();
         populateList();
         clickDelete();
+        clickFetch();
 
     }
 
@@ -37,6 +39,7 @@ public class ViewListActivity extends AppCompatActivity {
         lvShowList = (ListView)findViewById(R.id.lvShowList);
         mDatabaseHeper = new DatabaseHelper(this);
         btnDeleteList = (Button)findViewById(R.id.btnDeleteList);
+        btnFetch = (Button)findViewById(R.id.btnFetch);
     }
 
     private void populateList(){
@@ -51,6 +54,15 @@ public class ViewListActivity extends AppCompatActivity {
         lvShowList.setAdapter(adapter);
     }
 
+    private void fetchData(){       /*get the data from the database as a jason*/
+        GetDataClass process = new GetDataClass();
+        if(CheckNetworkClass.isInternetAvailable(ViewListActivity.this)){
+            process.execute();
+        }else{
+            toastMessage("No Internet Connection");
+        }
+    }
+
     private void clickDelete(){
         btnDeleteList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +75,17 @@ public class ViewListActivity extends AppCompatActivity {
                 }else{
                     toastMessage("Nothing to delete");
                 }
+            }
+        });
+    }
+
+    private void clickFetch(){
+        btnFetch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ViewListActivity.this, FetchResultsActivity.class);
+                startActivity(i);
+                fetchData();
             }
         });
     }
